@@ -41,7 +41,7 @@ const Banner = () => {
                                 </span>
                             </h2>
                             <button
-                                className='font-bold text-white bg-[#3578F0] px-8 py-1 rounded-md mt-6'>
+                                className="bg-gradient-to-tr from-[#1bc0ea] to-gray-500 text-white px-8 py-1 rounded-md mt-6">
                                 Details</button>
                         </div>
                         <div className='absolute w-full h-full -z-30 opacity-60 top-0 left-0 bg-black rounded-md'></div>
@@ -56,7 +56,7 @@ const Banner = () => {
                                 </span>
                             </h2>
                             <button
-                                className='font-bold text-white bg-[#3578F0] px-8 py-1 rounded-md mt-6'>
+                                className="bg-gradient-to-tr from-[#1bc0ea] to-gray-500 text-white px-8 py-1 rounded-md mt-6">
                                 Details</button>
                         </div>
                         <div className='w-full h-full opacity-60 top-0 left-0 bg-black rounded-md z-20 absolute'>
@@ -72,7 +72,7 @@ const Banner = () => {
                                 </span>
                             </h3>
                             <button
-                                className='font-bold text-white bg-[#3578F0] px-8 py-1 rounded-md mt-6'>
+                                className="bg-gradient-to-tr from-[#1bc0ea] to-gray-500 text-white px-8 py-1 rounded-md mt-6">
                                 Details</button>
                         </div>
                         <div className='absolute w-full h-full opacity-60 top-0 left-0 bg-black rounded-md z-30 '></div>
@@ -87,7 +87,7 @@ const Banner = () => {
                                 </span>
                             </h3>
                             <button
-                                className='font-bold text-white bg-[#3578F0] px-8 py-1 rounded-md mt-6'>
+                                className="bg-gradient-to-tr from-[#1bc0ea] to-gray-500 text-white px-8 py-1 rounded-md mt-6">
                                 Details</button>
                         </div>
                         <div className='absolute w-full h-full opacity-60 top-0 left-0 bg-black rounded-md z-30 '></div>
@@ -101,7 +101,7 @@ const Banner = () => {
                                     Car Wash Solutions </span>
                             </h3>
                             <button
-                                className='font-bold text-white bg-[#3578F0] px-8 py-1 rounded-md mt-6'>
+                                className="bg-gradient-to-tr from-[#1bc0ea] to-gray-500 text-white px-8 py-1 rounded-md mt-6">
                                 Details</button>
                         </div>
                         <div className='absolute w-full h-full opacity-60 top-0 left-0 bg-black rounded-md z-30 '></div>
@@ -116,7 +116,7 @@ const Banner = () => {
                                 </span>
                             </h3>
                             <button
-                                className='font-bold text-white bg-[#3578F0] px-8 py-1 rounded-md mt-6'>
+                                className="bg-gradient-to-tr from-[#1bc0ea] to-gray-500 text-white px-8 py-1 rounded-md mt-6">
                                 Details</button>
                         </div>
                         <div className='absolute w-full h-full opacity-60 top-0 left-0 bg-black rounded-md z-30 '></div>

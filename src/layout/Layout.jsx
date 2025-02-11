@@ -6,7 +6,7 @@ const Layout = () => {
 
     return (
         <div
-            className="max-w-screen-xl mx-auto px-4"
+            className="max-w-screen-xl mx-auto px-6"
         >
             <div className="fixed z-[999999] lg:w-[1250px] w-full">
                 <Navbar />

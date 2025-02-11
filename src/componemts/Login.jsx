@@ -63,7 +63,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className="pt-28">
            <Helmet><title>Login Page</title></Helmet>
             <div className=" lg:w-[450px] mx-auto ">
                 <form onSubmit={handleLogin}>
@@ -104,7 +104,7 @@ const Login = () => {
                     <input type="submit" value="Login" className="text-center mx-auto block bg-[#1bc0ea] w-full py-2 font-medium rounded-lg text-white" />
                 </form>
 
-                <div className="flex justify-center items-center mt-4 gap-3">
+                <div className="flex flex-col justify-center items-center mt-4 gap-3">
                     <button onClick={handleLoginWithGoogle}
                         className="flex items-center gap-3 border-2  border-[#1bc0ea]  p-2 rounded-lg  hover:bg-[#1bc0ea] hover:text-white">
                         <span className="text-blue-700"><SiGoogle /></span>

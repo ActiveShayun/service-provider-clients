@@ -1,31 +1,19 @@
 
 
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <div>
-            <footer className="footer bg-base-200 text-base-content p-10 mt-20">
-                <nav>
-                    <h6 className="footer-title">IT Services</h6>
-                    <a className="link link-hover">Data Synchronization</a>
-                    <a className="link link-hover">Content Management</a>
-                    <a className="link link-hover">Content Delivery</a>
-                    <a className="link link-hover">Transaction Processing</a>
-                </nav>
-                <nav>
-                    <h6 className="footer-title">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Locations</a>
-                    <a className="link link-hover">IT Blog</a>
-                </nav>
-                <nav>
-                    <h6 className="footer-title">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
-                </nav>
+            <footer className="footer bg-base-200 text-base-content p-10 mt-20 rounded-md">
+                <div className='flex items-center gap-4 justify-center mx-auto'>
+                    <NavLink to='/' className={({ isActive }) => isActive ? 'underline' : ' font-semibold'} >Home</NavLink>
+                    <NavLink to='service' className={({ isActive }) => isActive ? 'underline ' : ' font-semibold'} >Service</NavLink>
+                    <NavLink to='myReview/' className={({ isActive }) => isActive ? 'underline ' : ' font-semibold '}>My Review</NavLink>
+                    <NavLink to='AddService/' className={({ isActive }) => isActive ? 'underline ' : ' font-semibold '}>Add Service</NavLink>
+                    <NavLink to='myService/' className={({ isActive }) => isActive ? 'underline ' : ' font-semibold '}>My Service</NavLink>
+                </div>
             </footer>
             <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
                 <aside className="grid-flow-col items-center">
@@ -71,7 +59,7 @@ const Footer = () => {
                                     d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
                             </svg>
                         </a>
-                        <a href='https://www.facebook.com/'> 
+                        <a href='https://www.facebook.com/'>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"

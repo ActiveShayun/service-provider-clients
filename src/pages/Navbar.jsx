@@ -11,8 +11,8 @@ const Navbar = () => {
         {
             !user &&
             <NavLink to='/login'
-                className={({ isActive }) => isActive ? 'underline ' :
-                    ' font-semibold'} >
+                className={({ isActive }) => isActive ? 'underline lg:text-white' :
+                    'lg:text-white font-semibold'} >
                 Login</NavLink>
         }
     </>
@@ -31,7 +31,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar w-full p-0 rounded-br-md rounded-bl-md   flex items-center justify-between bg-black opacity-65">
+        <div className="navbar w-full p-0 rounded-br-md rounded-bl-md   flex items-center justify-between bg-black opacity-85">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,11 +41,13 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu bg-green-700 text-white menu-sm dropdown-content opacity-0 rounded-box z-[5555] mt-3 w-52 p-2 shadow">
-                        {link2}
+                        className="menu bg-green-700 text-white menu-sm dropdown-content rounded-box z-[5555] mt-3 w-52 p-2 shadow">
+                        {link}
                         {
-                            user && link
+                            user && link2
                         }
+                        {user && <button onClick={handleLogOut}
+                            className="bg-gradient-to-tr from-[#1bc0ea] to-gray-500 text-black px-8 py-1 rounded-md mt-6">LogOut</button>}
                     </ul>
                 </div>
                 <img
@@ -65,7 +67,7 @@ const Navbar = () => {
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img
-                                        alt="Tailwind CSS Navbar component"
+                                        alt="user"
                                         src={user.photoURL} />
                                 </div>
                             </div>
@@ -73,6 +75,8 @@ const Navbar = () => {
                                 tabIndex={0}
                                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[555] mt-3 w-52 p-2 shadow">
                                 {link2}
+                                {user && <button onClick={handleLogOut}
+                                    className="bg-gradient-to-tr from-[#1bc0ea] to-gray-500 text-black px-8 py-1 rounded-md mt-6">LogOut</button>}
                             </ul>
                         </div>
                     }

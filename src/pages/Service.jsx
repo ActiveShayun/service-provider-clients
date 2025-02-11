@@ -32,15 +32,15 @@ const Service = () => {
             <div className='mb-6'>
                 <SectionTitle heading={'All Service'} />
             </div>
-            <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
+            <div className='flex flex-col md:flex-row justify-center items-center gap-5 lg:w-2/3 w-full mx-auto'>
                 <Helmet><title>All Service</title></Helmet>
-                <div>
+                <div className='w-full'>
                     <select
                         name='category'
                         id='category'
                         onChange={(e) => setFilter(e.target.value)}
                         value={filter}
-                        className='border p-4 rounded-lg'
+                        className='border p-4 rounded-lg w-full'
                     >
                         <option value=''>Filter By Category</option>
                         <option value='Web Development'>Web Development</option>
@@ -52,12 +52,12 @@ const Service = () => {
                     </select>
                 </div>
 
-                <form>
-                    <div className='flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
+                <form className='w-full'>
+                    <div className='flex p-1 overflow-hidden border rounded-lg   focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                         <input
                             onChange={e => setSearch(e.target.value)}
                             value={search}
-                            className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
+                            className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent w-full'
                             type='text'
                             name='category'
                             placeholder='Enter Job Title'
@@ -69,13 +69,13 @@ const Service = () => {
                         </button>
                     </div>
                 </form>
-                <div>
+                <div className='w-full mx-auto'>
                     <select
                         name='category'
                         id='category'
                         onChange={(e) => setSort(e.target.value)}
                         value={sort}
-                        className='border p-4 rounded-md'
+                        className='border p-4 rounded-md w-full'
                     >
                         <option value=''>Sort By Deadline</option>
                         <option value='dsc'>Descending Order</option>

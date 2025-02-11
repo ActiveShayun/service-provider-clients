@@ -7,6 +7,7 @@ import DatePicker from "react-datepicker";
 import ReactStars from "react-rating-stars-component";
 import { Helmet } from "react-helmet-async";
 import AxiosSecure from "../usehooks/AxiosSecure";
+import SectionTitle from "../Shered/SectionTitle";
 
 
 const UpdatedReview = () => {
@@ -78,7 +79,7 @@ const UpdatedReview = () => {
     return (
         <div className="pt-28">
             <Helmet><title>Update Review </title></Helmet>
-            <h2>Update Your Review</h2>
+            <SectionTitle heading={'Update Your Service'}/>
             <div className="card bg-base-100 w-full max-w-lg mx-auto shrink-0 shadow-2xl">
 
                 <form onSubmit={handleUpdateReview} className="card-body">
