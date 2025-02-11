@@ -1,15 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../pages/Navbar";
 import Footer from "../componemts/Footer";
-import { motion } from "motion/react"
 
 const Layout = () => {
-  
+
     return (
         <div
-            className="max-w-screen-xl mx-auto "
+            className="max-w-screen-xl mx-auto px-4"
         >
-            <Navbar />
+            <div className="fixed z-[999999] lg:w-[1250px] w-full">
+                <Navbar />
+            </div>
             <Outlet />
             <Footer />
         </div>

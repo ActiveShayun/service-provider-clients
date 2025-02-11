@@ -4,9 +4,9 @@ import clients3 from '.././assets/clients2.jpg'
 
 const Latest = () => {
     return (
-        <div className="mt-20">
+        <div className="mt-16">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h3 className="text-4xl font-extrabold mb-4 text-blue-700">
             Latest News and Inspirational Stories
           </h3>

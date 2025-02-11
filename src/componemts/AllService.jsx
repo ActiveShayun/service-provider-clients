@@ -1,12 +1,26 @@
 import axios from "axios";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+// ..
+AOS.init();
 import { useEffect, useState } from "react";
-import ServiceCard from "./ServiceCard";
 import AxiosSecure from "../usehooks/AxiosSecure";
+import SectionTitle from "../Shered/SectionTitle";
+import ServiceCategory from "./ServiceCategory";
 
 const AllService = () => {
     const [services, setService] = useState([])
     const [search, setSearch] = useState('')
     const useAxios = AxiosSecure()
+    const cleanings = services?.filter(electrician => electrician?.category === 'cleaning')
+    const electricians = services?.filter(electrician => electrician?.category === 'electrician')
+    const carWash = services?.filter(electrician => electrician?.category === 'Car Wash')
+    const digitalMarketing = services?.filter(electrician => electrician?.category === 'Digital Marketing')
+    const graphicsDesign = services?.filter(electrician => electrician?.category === 'Graphics Design')
+    const webDevelopment = services?.filter(electrician => electrician?.category === 'Web Development')
+
 
     useEffect(() => {
         fetchAllService()
@@ -29,18 +43,14 @@ const AllService = () => {
 
 
 
-    // console.log(services)
+    console.log(services)
 
     return (
-        <div className="mt-10 lg:mt-20">
+        <div className="mt-16">
             <div className="text-center md:w-4/5 mx-auto space-y-3 mb-5">
-                <h2 className="text-4xl font-bold">Featured Services Section</h2>
-                <p className="mb-4">
-                    Discover the best we have to offer in our Featured Services section. Tailored to meet your unique needs, these services are designed to deliver exceptional results with precision and care. Whether you’re seeking innovative solutions, expert guidance, or personalized support, our offerings are crafted to help you achieve your goals efficiently and effectively. Explore now and experience top-tier services that prioritize your success!
-                </p>
-
+                <SectionTitle heading={'Service Category'} />
             </div>
-            <div className="my-4">
+            {/* <div className="mb-5">
                 <label className="input md:w-2/5 mx-auto input-bordered flex items-center gap-2">
                     <input type="text"
                         value={search}
@@ -58,15 +68,50 @@ const AllService = () => {
                             clipRule="evenodd" />
                     </svg>
                 </label>
-            </div>
-            <div className="lg:w-[950px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 justify-items-center">
-                {
-                    services?.map(service =>
-                        <ServiceCard
-                            key={service._id}
-                            service={service}
-                        ></ServiceCard>)
-                }
+            </div> */}
+
+            <div className="flex justify-center">
+                <Tabs>
+                    <TabList>
+                        <Tab>Electric</Tab>
+                        <Tab>Cleaning</Tab>
+                        <Tab>Wev Development</Tab>
+                        <Tab>Graphics Design</Tab>
+                        <Tab>Car Wash</Tab>
+                        <Tab>Digital Marketing</Tab>
+                    </TabList>
+
+                    <TabPanel>
+                        <div>
+                            <ServiceCategory items={electricians} />
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div>
+                            <ServiceCategory items={cleanings} />
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div>
+                            <ServiceCategory items={webDevelopment} />
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div>
+                            <ServiceCategory items={graphicsDesign} />
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div>
+                            <ServiceCategory items={carWash} />
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div>
+                            <ServiceCategory items={digitalMarketing} />
+                        </div>
+                    </TabPanel>
+                </Tabs>
             </div>
 
         </div>

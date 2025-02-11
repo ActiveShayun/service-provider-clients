@@ -4,11 +4,12 @@ import { AuthContext } from '../Auth-provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 const axiosInstant = axios.create({
-    baseURL: 'https://server-site-service.vercel.app',
+    baseURL: 'http://localhost:5000/',
+    // baseURL: 'http://localhost:5000',
     withCredentials: true,
 })
 const AxiosSecure = () => {
-   // const { handleLogOut } = useContext(AuthContext); // Context for logout handling
+    // const { handleLogOut } = useContext(AuthContext); // Context for logout handling
     //const navigate = useNavigate(); // React Router for navigation
 
     useEffect(() => {
@@ -33,7 +34,7 @@ const AxiosSecure = () => {
             (error) => {
                 const status = error.response?.status;
                 if (status === 401 || status === 403) {
-                  //  console.warn(`Authentication error (${status}): Logging out...`);
+                    //  console.warn(`Authentication error (${status}): Logging out...`);
                     handleLogOut()
                         .then(() => navigate('/login'))
                         .catch((err) => console.error('Logout error:', err));
@@ -47,7 +48,7 @@ const AxiosSecure = () => {
             axiosInstant.interceptors.request.eject(requestInterceptor);
             axiosInstant.interceptors.response.eject(responseInterceptor);
         };
-    }, [ ]); // Dependency array to ensure effect runs when these values change
+    }, []); // Dependency array to ensure effect runs when these values change
 
     return axiosInstant; // Return the configured axios instance
 

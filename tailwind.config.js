@@ -11,7 +11,9 @@ export default {
         'slide-1': "url('./assets/digital.jpg')",
         'slide-2': "url('./assets/paint.jpg')",
         'slide-3': "url('./assets/wev2.jpg')",
-        'service': "url('./assets/service.jpg')"
+        'electrician': "url('./assets/electician.jpg')",
+        'cleaner': "url('./assets/woman-cleaner.jpg')",
+        'carWash': "url('./assets/car-wash.jpg')",
       }
     },
   },

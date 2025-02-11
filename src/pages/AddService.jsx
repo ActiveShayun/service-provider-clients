@@ -152,9 +152,11 @@ const AddService = () => {
                                 Web Development</option>
                             <option value="Graphics Design">
                                 Graphics Design</option>
+                            <option value="cleaning">
+                                Cleaning  </option>
                             <option value="Digital Marketing">
                                 Digital Marketing</option>
-                            <option value="Electrical services">
+                            <option value="electrician">
                                 Electrical services</option>
                             <option value="Car Wash">
                                 Car Wash</option>

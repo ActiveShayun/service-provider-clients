@@ -27,3 +27,9 @@
     object-fit: cover;
   }
   
+
+  .react-tabs{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }

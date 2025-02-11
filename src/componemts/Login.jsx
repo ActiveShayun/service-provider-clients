@@ -11,7 +11,7 @@ const Login = () => {
     const emailRef = useRef()
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location?.state '/'
+    // const from = location?.state '/'
     const { loginWithEmailAndPassword, loginWithGoggle, handlePasswordReset, setUser } = useContext(AuthContext)
 
     const [showPassword, setShowPassword] = useState(false)
