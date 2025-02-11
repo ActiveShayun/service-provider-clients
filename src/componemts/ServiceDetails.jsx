@@ -20,7 +20,7 @@ const ServiceDetails = () => {
     const [startDate, setStartDate] = useState(new Date());
     const { id } = useParams()
     const useAxios = AxiosSecure()
- //   console.log(id);
+    //   console.log(id);
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -31,17 +31,17 @@ const ServiceDetails = () => {
         const { data } = await useAxios.get(`/serviceDetails/${id}`)
         setServices(data)
     }
-   // console.log(services);
+    // console.log(services);
     const { _id, reviewCount, image, title, description, category, priceRance, company_name, email, wevsite, deadline, buyerInfo } = services
-console.log(priceRance?.max_price);
-   // console.log(rating);
-   // console.log(services);
+    console.log(priceRance?.max_price);
+    // console.log(rating);
+    // console.log(services);
 
     // add review
     const submitReview = async (e) => {
         e.preventDefault()
         // rating validation
-       // console.log(rating);
+        // console.log(rating);
         if (rating === 0) {
             return setError('please select rating')
         } else {
@@ -50,7 +50,7 @@ console.log(priceRance?.max_price);
 
         const form = new FormData(e.target)
         const initialData = Object.fromEntries(form.entries())
-      //  console.log(initialData);
+        //  console.log(initialData);
 
 
         const { ...newReview } = initialData
@@ -59,6 +59,7 @@ console.log(priceRance?.max_price);
         newReview.email = user?.email
         newReview.title = title
         newReview.buyerEmail = buyerInfo?.email
+        newReview.reviewUserPhoto = user?.photoURL
         newReview.JobId = _id
         newReview.Buyer = {
             name: buyerInfo?.name,
@@ -80,7 +81,7 @@ console.log(priceRance?.max_price);
     };
 
     return (
-        <div className="mx-auto p-8 bg-gradient-to-r from-purple-800 via-gray-900 to-black text-white rounded-lg shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-12 ">
+        <div className="mx-auto p-8 bg-gradient-to-r from-purple-800 via-gray-900 to-black text-white rounded-lg shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-12 pt-28">
             {/* Service Details Section */}
             <Helmet><title>Service Details</title></Helmet>
             <div className="space-y-6 pb-8">

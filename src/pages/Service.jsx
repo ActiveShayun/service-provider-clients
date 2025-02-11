@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import CardService from '../componemts/CardService';
 import { Helmet } from 'react-helmet-async';
 import AxiosSecure from '../usehooks/AxiosSecure';
+import SectionTitle from '../Shered/SectionTitle';
 
 
 const Service = () => {
@@ -27,7 +28,10 @@ const Service = () => {
         setSearch('')
     }
     return (
-        <div>
+        <div className='pt-32'>
+            <div className='mb-6'>
+                <SectionTitle heading={'All Service'} />
+            </div>
             <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
                 <Helmet><title>All Service</title></Helmet>
                 <div>
@@ -42,6 +46,9 @@ const Service = () => {
                         <option value='Web Development'>Web Development</option>
                         <option value='Graphics Design'>Graphics Design</option>
                         <option value='Digital Marketing'>Digital Marketing</option>
+                        <option value='cleaning'>Cleaning</option>
+                        <option value='electrician'>Electrician</option>
+                        <option value='carWash'>carWash</option>
                     </select>
                 </div>
 

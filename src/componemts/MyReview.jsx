@@ -31,10 +31,10 @@ const MyReview = () => {
   //  console.log(reviews);
 
     return (
-        <div>
+        <div className="pt-28">
          <Helmet><title>My Review</title></Helmet>
-            <h2 className="text-3xl text-center mb-4">Your Experience, Our Commitment Service Reviews</h2>
-            <div className="w-[300px] mx-auto mb-4">
+            <h2 className="text-3xl text-center mb-5">Your Experience, Our Commitment Service Reviews</h2>
+            <div className="w-[300px] mx-auto mb-4 ">
                 <label className="input input-bordered flex items-center gap-2">
                     <input onChange={e => setSearch(e.target.value)}
                         type="text"

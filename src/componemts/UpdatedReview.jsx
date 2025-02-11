@@ -15,7 +15,7 @@ const UpdatedReview = () => {
     const [error, setError] = useState('')
     const [startDate, setStartDate] = useState(new Date());
     const { id } = useParams()
-  //  console.log(id);
+    //  console.log(id);
     const [reviews, setReviews] = useState({})
     const navigate = useNavigate()
     const useAxios = AxiosSecure()
@@ -37,27 +37,27 @@ const UpdatedReview = () => {
 
     const handleUpdateReview = async e => {
         e.preventDefault()
-            // rating validation
-         //   console.log(rating);
-            if (!rating) {
-                return setError('please select rating')
-            } else {
-                setError('')
-            }
-            
-    
+        // rating validation
+        //   console.log(rating);
+        if (!rating) {
+            return setError('please select rating')
+        } else {
+            setError('')
+        }
+
+
         const form = new FormData(e.target)
         const initialData = Object.fromEntries(form.entries())
-      //  console.log(initialData);
-      
+        //  console.log(initialData);
 
-    
+
+
         const { ...newReview } = initialData
         newReview.title = reviews?.title
         newReview.deadline = startDate
         newReview.ratings = rating
 
-       // console.log(newReview);
+        // console.log(newReview);
 
         try {
             await useAxios.put(`/update-myReview/${id}`, newReview)
@@ -74,12 +74,13 @@ const UpdatedReview = () => {
         setRating(newRating)
     };
 
-  // console.log(reviews);
+    // console.log(reviews);
     return (
-        <div>
-              <Helmet><title>Update Review </title></Helmet>
+        <div className="pt-28">
+            <Helmet><title>Update Review </title></Helmet>
+            <h2>Update Your Review</h2>
             <div className="card bg-base-100 w-full max-w-lg mx-auto shrink-0 shadow-2xl">
-          
+
                 <form onSubmit={handleUpdateReview} className="card-body">
                     {/* service title */}
                     <div className="form-control">

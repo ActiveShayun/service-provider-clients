@@ -58,7 +58,7 @@ const MyServiceTable = ({ service, idx, fetchMyService, setServices }) => {
 
     return (
         <>
-            <tr>
+            <tr className="border">
                 <th>
                     <label>
                         {idx + 1}

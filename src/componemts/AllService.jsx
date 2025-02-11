@@ -14,14 +14,14 @@ const AllService = () => {
     const [services, setService] = useState([])
     const [search, setSearch] = useState('')
     const useAxios = AxiosSecure()
-    const cleanings = services?.filter(electrician => electrician?.category === 'cleaning')
+    const cleanings = services?.filter(cleaning => cleaning?.category === 'cleaning')
     const electricians = services?.filter(electrician => electrician?.category === 'electrician')
-    const carWash = services?.filter(electrician => electrician?.category === 'Car Wash')
+    const carWash = services?.filter(carWash => carWash?.category === 'Car Wash')
     const digitalMarketing = services?.filter(electrician => electrician?.category === 'Digital Marketing')
     const graphicsDesign = services?.filter(electrician => electrician?.category === 'Graphics Design')
     const webDevelopment = services?.filter(electrician => electrician?.category === 'Web Development')
 
-
+ 
     useEffect(() => {
         fetchAllService()
     }, [search])

@@ -31,7 +31,7 @@ const MyService = () => {
   //  console.log(search);
    // console.log(services);
     return (
-        <div>
+        <div className="pt-28">
             <Helmet><title>MyService</title></Helmet>
             {/* search functionality for finding service*/}
             <div className="md:w-[400px] mx-auto mb-4">
@@ -61,7 +61,7 @@ const MyService = () => {
                 <table className="table lg:w-5/6 mx-auto">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="border">
                             <th>
                                 <label>
                                     ID
