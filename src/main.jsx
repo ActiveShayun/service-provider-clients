@@ -13,7 +13,17 @@ createRoot(document.getElementById('root')).render(
     <HelmetProvider>
       <AuthProvider>
         <RouterProvider router={router}></RouterProvider>
-        <Toaster position="top-right" reverseOrder={false} />
+        <Toaster toastOptions={{
+          className: '',
+          style: {
+            border: '1px solid #713200',
+            padding: '16px',
+            color: '#713200',
+            position:'relative',
+            top: '80px'
+          },
+        }}
+        reverseOrder={false} />
       </AuthProvider>
     </HelmetProvider>
   </StrictMode>,

@@ -4,6 +4,7 @@ import axios from "axios";
 import MyServiceTable from "./MyServiceTable";
 import AxiosSecure from "../usehooks/AxiosSecure";
 import { Helmet } from "react-helmet-async";
+import SectionTitle from "../Shered/SectionTitle";
 
 
 const MyService = () => {
@@ -22,20 +23,22 @@ const MyService = () => {
     }, [search, email, services?.length])
 
     const fetchMyService = async () => {
-        const {data} = await useAxios.get(`/my-service`, {
+        const { data } = await useAxios.get(`/my-service`, {
             params: { email, search },
         })
         setServices(data)
     }
 
-  //  console.log(search);
-   // console.log(services);
+    //  console.log(search);
+    // console.log(services);
     return (
         <div className="pt-28">
             <Helmet><title>MyService</title></Helmet>
             {/* search functionality for finding service*/}
             <div className="md:w-[400px] mx-auto mb-4">
-                <h2 className="text-4xl text-center mb-6">Your Exclusive Service</h2>
+                <div className="mb-4">
+                    <SectionTitle heading={'Your Exclusive Service'} />
+                </div>
                 <div>
                     <label className="input input-bordered flex items-center gap-2">
                         <input

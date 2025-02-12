@@ -27,6 +27,7 @@ const Service = () => {
         setSort('')
         setSearch('')
     }
+    console.log(services);
     return (
         <div className='pt-32'>
             <div className='mb-6'>
@@ -48,7 +49,7 @@ const Service = () => {
                         <option value='Digital Marketing'>Digital Marketing</option>
                         <option value='cleaning'>Cleaning</option>
                         <option value='electrician'>Electrician</option>
-                        <option value='carWash'>carWash</option>
+                        <option value='Car Wash'>Car Wash</option>
                     </select>
                 </div>
 

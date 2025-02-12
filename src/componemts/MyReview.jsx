@@ -5,6 +5,7 @@ import ReviewCard from "./ReviewCard";
 import Loader from "../Router/Loader";
 import { Helmet } from "react-helmet-async";
 import AxiosSecure from "../usehooks/AxiosSecure";
+import SectionTitle from "../Shered/SectionTitle";
 
 
 
@@ -28,12 +29,14 @@ const MyReview = () => {
         fetchMyReview()
     }, [user])
 
-  //  console.log(reviews);
+    //  console.log(reviews);
 
     return (
         <div className="pt-28">
-         <Helmet><title>My Review</title></Helmet>
-            <h2 className="text-3xl text-center mb-5">Your Experience, Our Commitment Service Reviews</h2>
+            <Helmet><title>My Review</title></Helmet>
+            <div className="mb-4">
+                <SectionTitle heading={'Your Experience, Our Commitment Service Reviews'} />
+            </div>
             <div className="w-[300px] mx-auto mb-4 ">
                 <label className="input input-bordered flex items-center gap-2">
                     <input onChange={e => setSearch(e.target.value)}
