@@ -19,6 +19,7 @@ const ServiceDetails = () => {
     const [error, setError] = useState('')
     const [startDate, setStartDate] = useState(new Date());
     const { id } = useParams()
+    console.log('id', id);
     const useAxios = AxiosSecure()
     //   console.log(id);
     const navigate = useNavigate()
@@ -36,6 +37,8 @@ const ServiceDetails = () => {
     console.log(priceRance?.max_price);
     // console.log(rating);
     // console.log(services);
+
+
 
     // add review
     const submitReview = async (e) => {
@@ -65,6 +68,7 @@ const ServiceDetails = () => {
             name: buyerInfo?.name,
             photo: buyerInfo?.photo
         }
+        console.log('newReview',newReview);
 
         // review add/post method
         try {
@@ -119,7 +123,7 @@ const ServiceDetails = () => {
                 </div>
                 {/* rating review component */}
                 <div className='relative top-7 block mt-20'>
-                    <RatingReview />
+                    <RatingReview id={id} />
                 </div>
             </div>
 

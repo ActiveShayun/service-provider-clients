@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import AxiosSecure from '../usehooks/AxiosSecure';
 
-const RatingReview = () => {
+const RatingReview = ({ id }) => {
+    console.log('id', id);
     const useAxios = AxiosSecure()
     const [reviews, setReviews] = useState([])
+    console.log(reviews);
 
     useEffect(() => {
         fetchAllReview()
     }, [])
+    
     const fetchAllReview = async () => {
-        const { data } = await useAxios.get('/all-review')
+        const { data } = await useAxios.get(`/customerReview/${id}`)
         setReviews(data)
     }
 
@@ -38,7 +41,7 @@ const RatingReview = () => {
                         <div>
                             <img src={review?.buyer?.photo} alt="" />
                             <p className='text-yellow-500'>
-                              <span className='text-blue-400'>Ratings </span>
+                                <span className='text-blue-400'>Ratings </span>
                                 {generateStars(review.ratings, 10)}</p>
                         </div>
                     </div>)
