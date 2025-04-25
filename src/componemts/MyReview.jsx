@@ -34,8 +34,8 @@ const MyReview = () => {
     return (
         <div className="pt-28">
             <Helmet><title>My Review</title></Helmet>
-            <div className="mb-4">
-                <SectionTitle heading={'Your Experience, Our Commitment Service Reviews'} />
+            <div className="mb-7">
+                <SectionTitle heading={'Happy And Satisfy Faces'} />
             </div>
             <div className="w-[300px] mx-auto mb-4 ">
                 <label className="input input-bordered flex items-center gap-2">

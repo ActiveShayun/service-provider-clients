@@ -4,16 +4,21 @@ import { CiBookmarkRemove, CiEdit } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import AxiosSecure from "../usehooks/AxiosSecure";
+import { FaQuoteLeft } from "react-icons/fa";
+import { FaQuoteRight } from "react-icons/fa";
+import { AuthContext } from "../Auth-provider/AuthProvider";
+import { useContext } from "react";
 
 
 const ReviewCard = ({ review, setReviews, fetchMyReview }) => {
     const navigate = useNavigate()
-  //  console.log(review);
+    //  console.log(review);
     const useAxios = AxiosSecure()
-    
+    const { user } = useContext(AuthContext)
+
     // updated  review 
     const handleUpdate = id => {
-       // console.log(id);
+        // console.log(id);
         Swal.fire({
             title: "Do you want to update the review?",
             showCancelButton: true,
@@ -46,9 +51,9 @@ const ReviewCard = ({ review, setReviews, fetchMyReview }) => {
                 // Or directly update state without refetching:
                 setReviews((prevServices) => prevServices.filter(service => service._id !== id));
 
-              // console.log('Deleted Data:', data);
+                // console.log('Deleted Data:', data);
             } catch (err) {
-               // console.error('Error deleting service:', err);
+                // console.error('Error deleting service:', err);
                 toast.error("Failed to delete service");
             }
         } else {
@@ -71,27 +76,37 @@ const ReviewCard = ({ review, setReviews, fetchMyReview }) => {
     return (
         <div className="card bg-white md:w-96 w-full  mx-auto shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300 h-[260px]">
             <div className="card-body">
-                <h2 className="card-title text-2xl font-bold text-gray-800 mb-2">
+                <h2 className="card-title text-lg font-bold text-gray-800 mb-2">
                     {review?.title}
                 </h2>
-                <p className="text-gray-600 text-sm mb-4">
-                    {review?.review}
+
+                <p className="text-gray-600 text-sm mb-4 flex gap-2">
+                    <span>
+                        <FaQuoteLeft />
+                    </span>
+                    <span> {review?.review}</span>
+
                 </p>
                 <div className="card-actions flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                        <span className="text-yellow-500">{generateStars(review?.ratings)}</span>
+                    <div className="flex gap-4 items-center">
+                        <img className="w-[50px] h-[50px] rounded-full" src={user?.photoURL} alt="" />
+                        <div className="">
+                            <p>{user?.displayName}</p>
+                            <span className="text-yellow-500">{generateStars(review?.ratings)}</span>
+                        </div>
+
                     </div>
                     <div className="flex space-x-2">
                         <button
                             onClick={() => handleUpdate(review._id)}
-                            className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                            className="flex items-center justify-center px-3 py-2 bg-blue-500 text-white text-sm font-semibold rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
                             title="Edit Review"
                         >
                             <CiEdit size={20} />
                         </button>
                         <button
                             onClick={() => handleDelete(review._id)}
-                            className="flex items-center justify-center px-4 py-2 bg-red-500 text-white text-sm font-semibold rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
+                            className="flex items-center justify-center px-3 py-2 bg-red-500 text-white text-sm font-semibold rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
                             title="Delete Review"
                         >
                             <CiBookmarkRemove size={20} />
