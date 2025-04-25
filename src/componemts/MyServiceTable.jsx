@@ -7,7 +7,8 @@ import AxiosSecure from "../usehooks/AxiosSecure";
 
 
 const MyServiceTable = ({ service, idx, fetchMyService, setServices }) => {
-    const { title, company_name, category, buyerInfo, _id } = service
+    const {image, title, company_name, category, buyerInfo, _id } = service
+    console.log(service);
     const navigate = useNavigate()
     const useAxios = AxiosSecure()
 

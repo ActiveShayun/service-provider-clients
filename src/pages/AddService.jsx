@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
 import AxiosSecure from '../usehooks/AxiosSecure';
+import { imgBbUpload } from '../../../../plantNet-starter-template/client/src/api/utility';
 
 
 
@@ -28,13 +29,24 @@ const AddService = () => {
             max_price: parseFloat(max_price),
             min_price: parseFloat(min_price)
         };
+
+        const image = newService.image
+        console.log('image', image);
+
+        console.log('newService', newService.image.name);
+
+        const uploadImg = await imgBbUpload(image)
+        console.log('uploadImg', uploadImg);
+
         newService.deadline = startDate;
         newService.reviewCount = 0; // Initialize review count
         newService.buyerInfo = {
             name: user?.displayName,
             email: user?.email,
-            photo: user?.photoURL,
+            photo: uploadImg
         };
+
+
 
         try {
             // Make a POST request using the AxiosSecure instance
@@ -42,10 +54,10 @@ const AddService = () => {
                 `/add-service?email=${user?.email}`,
                 newService
             );
-
+            console.log('add-service', response);
             // Show success toast and log response
             toast.success('Service added successfully');
-            //  console.log('Response:', response);
+            console.log('Response:', response);
 
             // Optionally navigate or clear the form
             navigate('/'); // Uncomment if redirection is needed
@@ -73,7 +85,7 @@ const AddService = () => {
                             <label className="label">
                                 <span className="label-text text-lg text-white">Service Image</span>
                             </label>
-                            <input type="url" name="image" placeholder="Enter your img URL" className="py-3 px-3 rounded-lg input-bordered border border-gray-400 bg-transparent text-gray-300" required />
+                            <input type='file' name="image" placeholder="Enter your img URL" className="py-3 px-3 rounded-lg input-bordered border border-gray-400 bg-transparent text-gray-300" required />
                         </div>
 
                         <div className="form-control md:w-1/2">

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const ServiceCategoryCard = ({ item }) => {
-    const { _id, image, title, description, category, priceRange } = item
+    const { _id, image, title, description, category, priceRange, buyerInfo } = item
     //  console.log('service card',service);
     console.log('price', priceRange);
     return (
@@ -11,7 +11,7 @@ const ServiceCategoryCard = ({ item }) => {
                 {/* Background Image */}
                 <div className='absolute inset-0 z-10'>
                     <img
-                        src={image}
+                        src={buyerInfo?.photo}
                         alt=""
                         className='w-full h-full object-cover'
                     />
