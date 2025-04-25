@@ -69,8 +69,8 @@ const ReviewCard = ({ review, setReviews, fetchMyReview }) => {
         return stars;
     }
     return (
-        <div className="card bg-white md:w-96 w-full mb-6 mx-auto shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300">
-            <div className="card-body p-6">
+        <div className="card bg-white md:w-96 w-full  mx-auto shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300 h-[260px]">
+            <div className="card-body">
                 <h2 className="card-title text-2xl font-bold text-gray-800 mb-2">
                     {review?.title}
                 </h2>

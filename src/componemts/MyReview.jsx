@@ -61,7 +61,7 @@ const MyReview = () => {
                         <Loader />
                     </div>
                     :
-                    <div>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 justify-items-center items-start mt-8 gap-4 lg:px-5">
                         {
                             reviews?.map(review =>
                                 <ReviewCard

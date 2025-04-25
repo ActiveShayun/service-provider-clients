@@ -31,7 +31,7 @@ const AddService = () => {
         };
 
         const image = newService.image
-        console.log('image', image);
+        // console.log('image', image);
 
         console.log('newService', newService.image.name);
 
@@ -57,7 +57,7 @@ const AddService = () => {
             console.log('add-service', response);
             // Show success toast and log response
             toast.success('Service added successfully');
-            console.log('Response:', response);
+            // console.log('Response:', response);
 
             // Optionally navigate or clear the form
             navigate('/'); // Uncomment if redirection is needed
