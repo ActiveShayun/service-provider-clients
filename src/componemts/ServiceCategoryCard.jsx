@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const ServiceCategoryCard = ({ item }) => {
-    const { _id, image, title, description, category, priceRange, buyerInfo } = item
+    const { _id,  title, description, category, priceRange, buyerInfo } = item
     //  console.log('service card',service);
     console.log('price', priceRange);
     return (

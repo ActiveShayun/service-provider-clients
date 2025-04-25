@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import * as motion from "motion/react-client"
 
 const CardService = ({ service }) => {
-    const { _id, image, title, description, category, priceRance } = service
-   // console.log(service);
+    const { _id, buyerInfo, title, description, category, priceRance } = service
+    // console.log(service);
 
     return (
         <div className='w-4/5 lg:w-[310px] h-[250px] mx-auto relative border border-gray-300 rounded-md shadow-lg overflow-hidden'>
             {/* Background Image */}
             <div className='absolute inset-0 z-10'>
                 <img
-                    src={image}
+                    src={buyerInfo?.photo}
                     alt=""
                     className='w-full h-full object-cover'
                 />

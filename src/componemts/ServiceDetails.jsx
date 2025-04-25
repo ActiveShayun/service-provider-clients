@@ -33,7 +33,7 @@ const ServiceDetails = () => {
         setServices(data)
     }
     // console.log(services);
-    const { _id, reviewCount, image, title, description, category, priceRance, company_name, email, wevsite, deadline, buyerInfo } = services
+    const { _id, reviewCount, title, description, category, priceRance, company_name, email, wevsite, deadline, buyerInfo } = services
     console.log(priceRance?.max_price);
     // console.log(rating);
     // console.log(services);
@@ -119,7 +119,7 @@ const ServiceDetails = () => {
                     </p>
                 )}
                 <div className="overflow-hidden rounded-lg shadow-md mt-4 ">
-                    <img className="w-full h-auto object-cover" src={image} alt="Service" />
+                    <img className="w-full h-auto object-cover" src={buyerInfo?.photo} alt="Service" />
                 </div>
                 {/* rating review component */}
                 <div className='relative top-7 block mt-20'>
